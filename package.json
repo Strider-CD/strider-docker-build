@@ -1,6 +1,6 @@
 {
   "name": "strider-docker-build",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Build Docker images in Strider",
   "main": "worker.js",
   "scripts": {
@@ -22,5 +22,9 @@
     "config": {
       "controller": "DockerBuildController"
     }
+  },
+  "dependencies": {
+    "dockerode": "^2.0.2",
+    "dockerode-optionator": "^1.0.0"
   }
 }
