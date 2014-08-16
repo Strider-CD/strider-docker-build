@@ -13,7 +13,7 @@
   "author": "Keyvan Fatehi",
   "license": "ISC",
   "strider": {
-    "id": "docker-build",
+    "id": "docker_build",
     "type": "job",
     "title": "Docker Build",
     "webapp": "webapp.js",

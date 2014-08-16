@@ -4,7 +4,6 @@ app.controller('DockerBuildController', ['$scope', function ($scope) {
   });
   $scope.saving = false;
   $scope.save = function () {
-    console.log("saving")
     $scope.saving = true;
     $scope.pluginConfig('docker_build', $scope.config, function () {
       $scope.saving = false;
