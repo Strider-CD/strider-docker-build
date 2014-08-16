@@ -1,0 +1,26 @@
+{
+  "name": "strider-docker-build",
+  "version": "0.0.1",
+  "description": "Build Docker images in Strider",
+  "main": "worker.js",
+  "scripts": {
+    "test": "echo 'none yet'"
+  },
+  "keywords": [
+    "strider",
+    "docker"
+  ],
+  "author": "Keyvan Fatehi",
+  "license": "ISC",
+  "strider": {
+    "id": "docker-build",
+    "type": "job",
+    "title": "Docker Build",
+    "webapp": "webapp.js",
+    "worker": "worker.js",
+    "icon": "icon.png",
+    "config": {
+      "controller": "DockerBuildController"
+    }
+  }
+}
