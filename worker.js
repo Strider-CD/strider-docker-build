@@ -1,5 +1,6 @@
 var Docker = require('dockerode')
   , opt = require('dockerode-optionator')
+  , JSONStream = require('json-stream')
 
 module.exports = {
   // Initialize the plugin for a job
@@ -26,19 +27,24 @@ module.exports = {
           docker.buildImage(archivePath, {
             t: config.tag,
             q: false
-          }, function (err, stream) {
+          }, function (err, ostream) {
             if (err) return done(err);
+            var stream = new JSONStream();
             stream.on('data', function (data) {
-              try {
-                var json = JSON.parse(data.toString())
-                context.out(json.stream);
-              } catch (e) {
-                context.out(data.toString())
+              if (data.stream) {
+                context.out(data.stream);
+              } else if (data.error) {
+                context.out(data.errorDetail.message)
+                err = new Error(data.error);
               }
             });
-            stream.on('end', function() {
-              done(null);
+            stream.on('error', function(err) {
+              err = err;
             });
+            stream.on('end', function() {
+              done(err);
+            });
+            ostream.pipe(stream);
           });
         }
       })

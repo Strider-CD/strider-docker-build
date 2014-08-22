@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "dockerode": "^2.0.2",
-    "dockerode-optionator": "^1.0.0"
+    "dockerode-optionator": "^1.0.0",
+    "json-stream": "^0.2.1"
   }
 }
