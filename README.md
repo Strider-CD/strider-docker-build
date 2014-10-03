@@ -4,9 +4,9 @@ Build Docker images with Strider. Uses the standard DOCKER_HOST environment vari
 
 ## Screenshots
 
-![](https://dewdrop.knban.com/028b72eb48c817b56a16a608a8e27812.jpg)
+![](https://i.imgur.com/Sq3UefD.png)
 
-![](https://dewdrop.knban.com/65388cf5a9f41c144e8ade486d3565cf.jpg)
+![](https://i.imgur.com/SMfT3p3.png)
 
 
 ## Rationale
