@@ -1,3 +1,6 @@
+// We'll create a stream shortly.
+var JSONStream = require('json-stream');
+
 module.exports = function(archivePath, config) {
   return function (context, done) {
     // Normalise docker-related environment variables
