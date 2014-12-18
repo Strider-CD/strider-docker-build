@@ -16,13 +16,13 @@ module.exports = {
       config = configuration || {},
 
       // The options to pass to the callback.
-      options = {/*
+      options = {
         // Prepare our tests.
         prepare: {
           command: 'git',
           args: ['archive', '--format=tar', '-o', archivePath, 'HEAD']
         }
-     */ };
+      };
 
     // Add the build instructions here.
     options[config.buildPhase] = require('./deployInstructions')(archivePath, config);
