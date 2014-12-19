@@ -1,4 +1,3 @@
-<br/>
 <h2>Docker Build</h2>
 <hr>
 <div class="row-fluid">
@@ -17,6 +16,11 @@
   <div class="span12">
     <label for="tagName">Tag name</label>
     <input type="text" name="tagName" ng-model="config.tag" required>
+
+    <label>
+      <input type="checkbox" name="push" ng-model="config.push">
+      Push after successful build?
+    </label>
   </div>
 </div>
 

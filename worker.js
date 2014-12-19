@@ -1,5 +1,9 @@
-// We'll create a stream shortly.
+'use strict';
+
+var os = require('os');
+var path = require('path');
 var JSONStream = require('json-stream');
+var build = require('./lib/build');
 
 // Export.
 module.exports = {
@@ -8,24 +12,23 @@ module.exports = {
   //   job & repo: see strider-runner-core
   //   cb(err, initialized plugin)
   init: function (configuration, job, context, cb) {
-    var
-      // Where to stash the archived project.
-      archivePath = '/tmp/archive.tar',
+    // Where to stash the archived project.
+    var archivePath = path.join(os.tmpdir(), 'archive-docker-build-' + Date.now() + '.tar');
 
-      // Get the config (if any.)
-      config = configuration || {},
+    // Get the config (if any.)
+    var config = configuration || {};
 
       // The options to pass to the callback.
-      options = {
-        // Prepare our tests.
-        prepare: {
-          command: 'git',
-          args: ['archive', '--format=tar', '-o', archivePath, 'HEAD']
-        }
-      };
+    var options = {
+      // Prepare our tests.
+      prepare: {
+        command: 'git',
+        args: ['archive', '--format=tar', '-o', archivePath, 'HEAD']
+      }
+    };
 
     // Add the build instructions here.
-    options[config.buildPhase] = require('./deployInstructions')(archivePath, config);
+    options[config.buildPhase] = build(archivePath, config);
 
     // Register the plugin and it's options.
     cb(null, options);
@@ -39,5 +42,4 @@ module.exports = {
     language: 'docker',
     framework: null
   }
-}
-
+};
