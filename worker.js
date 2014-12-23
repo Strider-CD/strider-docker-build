@@ -19,13 +19,7 @@ module.exports = {
     var config = configuration || {};
 
       // The options to pass to the callback.
-    var options = {
-      // Prepare our tests.
-      prepare: {
-        command: 'git',
-        args: ['archive', '--format=tar', '-o', archivePath, 'HEAD']
-      }
-    };
+    var options = {};
 
     // Add the build instructions here.
     options[config.buildPhase] = build(archivePath, config);
