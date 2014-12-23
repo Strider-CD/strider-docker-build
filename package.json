@@ -28,14 +28,7 @@
     }
   },
   "dependencies": {
-<<<<<<< HEAD
     "dockerode": "^2.0.6",
     "json-stream": "^0.2.1"
-=======
-    "dockerode": "^2.0.2",
-    "dockerode-optionator": "^1.1.1",
-    "json-stream": "^0.2.1",
-    "tar-fs": "^1.4.1"
->>>>>>> Use tar-fs to pack the archive before building the image, rather than git-archive in a prepare phase. This way the archive can include build artifacts from earlier phases that may be necessary to build the image.
   }
 }
