@@ -39,7 +39,24 @@ module.exports = function(archivePath, config) {
         done(err);
       });
 
-      ostream.pipe(stream);
+      // Pipe to event-stream.
+      ostream.pipe(function(data) {
+        var pipe_data = null;
+
+        // Try to parse as JSON.
+        try {
+          pipe_data = JSON.parse(data);
+        } catch(error) {
+          // It isn't JSON so make it JSON.
+          pipe_data = {
+            type: 'stdout',
+            data: data.toString()
+          };
+        }
+
+        // Write out.
+        stream(pipe_data);
+      });
     });
   };
 }
