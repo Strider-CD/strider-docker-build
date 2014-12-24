@@ -5,11 +5,11 @@
   <div class="span12">
     <label for="buildPhase">On which phase would you like to build your image?</label>
     <select name="buildPhase" ng-model="config.buildPhase" required>
-      <option value="environment" ng-selected="config.buildPhase == 'environment">Environment</option>
-      <option value="prepare" ng-selected="config.buildPhase == 'prepare">Prepare</option>
-      <option value="test" ng-selected="config.buildPhase == 'test">Test</option>
+      <option value="environment" ng-selected="config.buildPhase == 'environment'">Environment</option>
+      <option value="prepare" ng-selected="config.buildPhase == 'prepare'">Prepare</option>
+      <option value="test" ng-selected="config.buildPhase == 'test'">Test</option>
       <option value="deploy" ng-selected="!config.buildPhase || config.buildPhase == 'deploy'">Deploy</option>
-      <option value="cleanup" ng-selected="config.buildPhase == 'cleanup">Clean Up</option>
+      <option value="cleanup" ng-selected="config.buildPhase == 'cleanup'">Clean Up</option>
     </select>
   </div>
 </div>
