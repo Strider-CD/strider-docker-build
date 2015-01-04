@@ -12,8 +12,6 @@ module.exports = {
   //   job & repo: see strider-runner-core
   //   cb(err, initialized plugin)
   init: function (configuration, job, context, cb) {
-    // Where to stash the archived project.
-    var archivePath = path.join(os.tmpdir(), 'archive-docker-build-' + Date.now() + '.tar');
 
     // Get the config (if any.)
     var config = configuration || {};
@@ -22,7 +20,7 @@ module.exports = {
     var options = {};
 
     // Add the build instructions here.
-    options[config.buildPhase] = build(archivePath, config);
+    options[config.buildPhase] = build(config);
 
     // Register the plugin and it's options.
     cb(null, options);
