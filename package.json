@@ -1,6 +1,6 @@
 {
   "name": "strider-docker-build",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Build Docker images in Strider",
   "main": "worker.js",
   "scripts": {
