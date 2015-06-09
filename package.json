@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "dockerode": "^2.0.6",
-    "json-stream": "^0.2.1"
+    "json-stream": "^0.2.1",
+    "tar-fs": "^1.4.1"
   }
 }
