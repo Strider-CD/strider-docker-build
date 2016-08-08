@@ -4,7 +4,8 @@
   "description": "Build Docker images in Strider",
   "main": "worker.js",
   "scripts": {
-    "test": "echo 'none yet'"
+    "lint": "eslint *.js lib",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -14,8 +15,11 @@
     "strider",
     "docker"
   ],
+  "engines": {
+    "node": ">=4.2"
+  },
   "author": "Keyvan Fatehi",
-  "license": "ISC",
+  "license": "MIT",
   "strider": {
     "id": "docker_build",
     "type": "job",
@@ -28,8 +32,12 @@
     }
   },
   "dependencies": {
+    "debug": "^2.2.0",
     "dockerode": "^2.0.6",
     "json-stream": "^0.2.1",
     "tar-fs": "^1.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.2.2"
   }
 }

@@ -1,3 +1,4 @@
+'use strict';
 
 module.exports = {
   // an object that defines the schema for configuration
@@ -12,9 +13,9 @@ module.exports = {
       enum: ['strict', 'loose', 'none'],
       default: 'none'
     },
-    test: { type: String, default: 'npm test' },
+    test: {type: String, default: 'npm test'},
     globals: [{
       type: String
     }]
   }
-}
+};

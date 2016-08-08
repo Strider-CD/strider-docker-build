@@ -1,9 +1,6 @@
 'use strict';
 
-var os = require('os');
-var path = require('path');
-var JSONStream = require('json-stream');
-var build = require('./lib/build');
+const build = require('./lib/build');
 
 // Export.
 module.exports = {
@@ -16,7 +13,7 @@ module.exports = {
     // Get the config (if any.)
     var config = configuration || {};
 
-      // The options to pass to the callback.
+    // The options to pass to the callback.
     var options = {};
 
     // Add the build instructions here.
