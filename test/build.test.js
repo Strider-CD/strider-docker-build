@@ -9,7 +9,7 @@ describe("lib", () => {
   before(() => {
     mockServer = http.createServer((request, response) => {
       response.write(
-        JSON.stringify({ name: "xxxx", tags: ["latest", "v1.0", "v2.0"] })
+        JSON.stringify({ name: "xxxx", tags: ["latest"] })
       );
       response.end();
     });
