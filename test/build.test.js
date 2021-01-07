@@ -3,7 +3,7 @@ const http = require("http");
 
 process.env.DOCKER_HOST='http://localhost:5010'
 
-describe("worker", () => {
+describe("lib", () => {
   let mockServer;
 
   before(() => {
