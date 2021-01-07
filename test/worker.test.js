@@ -22,7 +22,7 @@ describe("worker", () => {
 
   it("tag auto add version", (done) => {
     build({
-      tag: "localhost:5000/xxxx",
+      tag: "localhost:5000/xxxx/bbb:1",
       autoVersion: true,
     })(
       {
