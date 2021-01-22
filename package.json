@@ -5,7 +5,7 @@
   "main": "worker.js",
   "scripts": {
     "lint": "eslint *.js lib",
-    "test": "npm run lint"
+    "test": "cross-env DEBUG=strider-docker-build:*,-not_this mocha"
   },
   "repository": {
     "type": "git",
@@ -32,12 +32,15 @@
     }
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "debug": "^2.2.0",
     "dockerode": "^2.0.6",
     "json-stream": "^0.2.1",
     "tar-fs": "^1.4.1"
   },
   "devDependencies": {
-    "eslint": "^3.2.2"
+    "cross-env": "^7.0.3",
+    "eslint": "^3.2.2",
+    "mocha": "^8.2.1"
   }
 }

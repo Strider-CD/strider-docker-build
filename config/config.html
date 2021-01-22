@@ -17,6 +17,11 @@
     <input type="text" name="tagName" ng-model="config.tag" required>
 
     <label>
+      <input type="checkbox" name="autoVersion" ng-model="config.autoVersion">
+      Auto add image tag version?
+    </label>
+
+    <label>
       <input type="checkbox" name="push" ng-model="config.push">
       Push after successful build?
     </label>
